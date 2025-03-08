@@ -6,9 +6,25 @@ jobs:
     steps:
       - name: Print your Register Number
         run: echo "Hello World-22IT050!"
+        
       - name: Checkout
         uses: actions/checkout@v4
+
       - name: Docker Build
         run: docker build -t tharshini27/ml-model-22it050 .
+        
       - name: Docker Images
         run: docker images
+
+      - name: Login to Docker Hub
+        uses: docker/login-action@v3
+        with:
+          username: ${{ vars.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+
+      - name: push
+        run: docker push tharshini27/ml-model-22it050 
+        
+
+        
+
