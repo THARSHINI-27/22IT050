@@ -9,6 +9,6 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
       - name: Docker Build
-        run: docker build -t tharshini27/ml-model-22it050.
+        run: docker build -t tharshini27/ml-model-22it050 .
       - name: Docker Images
         run: docker images
