@@ -1,0 +1,14 @@
+name: docker-pipeline-Tharshini
+on: push
+jobs:
+  docker-job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print your Register Number
+        run: echo "Hello World-22IT050!"
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Docker Build
+        run: docker build -t tharshini27/ml-model-22it050.
+      - name: Docker Images
+        run: docker images
